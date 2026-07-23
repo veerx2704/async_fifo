@@ -70,6 +70,7 @@ The design works in the following way:
 #### Note
 The matching at the read and write pointer happens differently. The read handler must assert empty when it catches up to the write pointer. Likewise, the write handler must assert full when it catches up to the read pointer. The read pointer can catch up to the write pointer when they both are in the same iteration, while the write pointer can catch up to the read pointer when they are in different iterations. To resolve this, an extra bit is added to the pointers to note whether there is any rollover. This extra bit is discarded when actually writing or reading from the memory.
 
+The design is free of Lint and CDC unsafe paths.
 
 ## Verification
 ![Testbench](TestBench_UVM_Async_fifo.png)
@@ -98,3 +99,6 @@ This project uses two sets of agents within a single environment. Each of these 
 - Random burst of read and write
 - Single read/write test in parallel
 - All the above tests with different clock ratios
+
+The design is also tested with non standard parameter values (non-default parameters and non powers of 2)
+The DUT passes all the above tests.

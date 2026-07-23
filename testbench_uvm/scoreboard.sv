@@ -34,13 +34,13 @@ task scoreboard::main_phase(uvm_phase phase);
 	fork
 		while(1) begin
 			exp_port.get(expected);
-			expect_queue.push_back(expected);
+			expect_queue.push_back(expected);	//For anything written, it gets pushbacked here to compare with DUT result for read
 		end
 		while(1) begin
 			act_port.get(actual);
 			if(expect_queue.size() > 0 ) begin
 				temp = expect_queue.pop_front();
-				result = actual.compare(temp);
+				result = actual.compare(temp);		//Comparing the pushbacked value with actual read value
 				if(result) begin
 					`uvm_info("scoreboard", "Compare SUCCESSFUL", UVM_LOW);
 					$display("Expected packet is:");
