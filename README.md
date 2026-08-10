@@ -80,7 +80,7 @@ The design is free of Lint and CDC unsafe paths.
 The following screenshots are the results obtained from design implemented in AMD Vivado 2024.2
 
 ![Design power](Power_report.png)
-![Design_timing](Timing_report.png)
+![Design timing](Timing_report.png)
 
 The results obtained from Yosys/OpenSTA synthesis based on Sky130 library are included in synth_logs/
 
