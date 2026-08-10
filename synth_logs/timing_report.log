@@ -1,0 +1,153 @@
+OpenSTA 3.1.0 0c9c542334 Copyright (c) 2026, Parallax Software, Inc.
+License GPLv3: GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
+
+This is free software, and you are free to change and redistribute it
+under certain conditions; type `show_copying' for details. 
+This program comes with ABSOLUTELY NO WARRANTY; for details type `show_warranty'.
+Warning: There are 36 input ports missing set_input_delay.
+Warning: There are 34 output ports missing set_output_delay.
+Warning: There are 34 unconstrained endpoints.
+Startpoint: $auto$ff.cc:266:slice$2505
+            (rising edge-triggered flip-flop clocked by rclk)
+Endpoint: $auto$ff.cc:266:slice$2509
+          (rising edge-triggered flip-flop clocked by rclk)
+Path Group: rclk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock rclk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 ^ $auto$ff.cc:266:slice$2505/CLK (sky130_fd_sc_hd__dfxtp_1)
+   4.0385    4.0385 ^ $auto$ff.cc:266:slice$2505/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.5762    4.6148 v $abc$4871$auto$blifparse.cc:386:parse_blif$5317/Y (sky130_fd_sc_hd__nand4b_1)
+   0.5767    5.1914 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$5320/Y (sky130_fd_sc_hd__xnor2_1)
+   0.2271    5.4186 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$5330/X (sky130_fd_sc_hd__xor2_1)
+   0.1448    5.5633 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$5331/Y (sky130_fd_sc_hd__xnor2_1)
+   0.0946    5.6579 v $abc$4871$auto$blifparse.cc:386:parse_blif$5333/Y (sky130_fd_sc_hd__nand4_1)
+   0.2361    5.8941 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$5339/Y (sky130_fd_sc_hd__nor4_1)
+   0.0000    5.8941 ^ $auto$ff.cc:266:slice$2509/D (sky130_fd_sc_hd__dfxtp_1)
+             5.8941   data arrival time
+
+   6.0000    6.0000   clock rclk (rise edge)
+   0.0000    6.0000   clock network delay (ideal)
+   0.0000    6.0000   clock reconvergence pessimism
+             6.0000 ^ $auto$ff.cc:266:slice$2509/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.0918    5.9082   library setup time
+             5.9082   data required time
+-------------------------------------------------------------
+             5.9082   data required time
+            -5.8941   data arrival time
+-------------------------------------------------------------
+             0.0142   slack (MET)
+
+
+Startpoint: $auto$ff.cc:266:slice$2520
+            (rising edge-triggered flip-flop clocked by wclk)
+Endpoint: $auto$ff.cc:266:slice$1336
+          (rising edge-triggered flip-flop clocked by wclk)
+Path Group: wclk
+Path Type: max
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock wclk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 ^ $auto$ff.cc:266:slice$2520/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.2930    0.2930 v $auto$ff.cc:266:slice$2520/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.9084    1.2015 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$4876/X (sky130_fd_sc_hd__lpflow_isobufsrc_1)
+   0.1838    1.3853 v $abc$4871$auto$blifparse.cc:386:parse_blif$4878/Y (sky130_fd_sc_hd__nand2_1)
+   0.3940    1.7793 v $abc$4871$auto$blifparse.cc:386:parse_blif$4879/X (sky130_fd_sc_hd__or3_1)
+   1.7311    3.5104 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$4978/Y (sky130_fd_sc_hd__nor3_1)
+   0.8835    4.3938 v $abc$4871$auto$blifparse.cc:386:parse_blif$4979/X (sky130_fd_sc_hd__lpflow_isobufsrc_1)
+   0.3921    4.7859 v $abc$4871$auto$blifparse.cc:386:parse_blif$4980/X (sky130_fd_sc_hd__a22o_1)
+   0.0000    4.7859 v $auto$ff.cc:266:slice$1336/D (sky130_fd_sc_hd__dfxtp_1)
+             4.7859   data arrival time
+
+   5.0000    5.0000   clock wclk (rise edge)
+   0.0000    5.0000   clock network delay (ideal)
+   0.0000    5.0000   clock reconvergence pessimism
+             5.0000 ^ $auto$ff.cc:266:slice$1336/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.1215    4.8785   library setup time
+             4.8785   data required time
+-------------------------------------------------------------
+             4.8785   data required time
+            -4.7859   data arrival time
+-------------------------------------------------------------
+             0.0926   slack (MET)
+
+
+Startpoint: $auto$ff.cc:266:slice$2456
+            (rising edge-triggered flip-flop clocked by rclk)
+Endpoint: $auto$ff.cc:266:slice$2499
+          (rising edge-triggered flip-flop clocked by rclk)
+Path Group: rclk
+Path Type: min
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock rclk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 ^ $auto$ff.cc:266:slice$2456/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.2751    0.2751 ^ $auto$ff.cc:266:slice$2456/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.1008    0.3760 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$5308/X (sky130_fd_sc_hd__and2_0)
+   0.0000    0.3760 ^ $auto$ff.cc:266:slice$2499/D (sky130_fd_sc_hd__dfxtp_1)
+             0.3760   data arrival time
+
+   0.0000    0.0000   clock rclk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000   clock reconvergence pessimism
+             0.0000 ^ $auto$ff.cc:266:slice$2499/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.0366   -0.0366   library hold time
+            -0.0366   data required time
+-------------------------------------------------------------
+            -0.0366   data required time
+            -0.3760   data arrival time
+-------------------------------------------------------------
+             0.4126   slack (MET)
+
+
+Startpoint: $auto$ff.cc:266:slice$2494
+            (rising edge-triggered flip-flop clocked by wclk)
+Endpoint: $auto$ff.cc:266:slice$1471
+          (rising edge-triggered flip-flop clocked by wclk)
+Path Group: wclk
+Path Type: min
+
+    Delay      Time   Description
+-------------------------------------------------------------
+   0.0000    0.0000   clock wclk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000 ^ $auto$ff.cc:266:slice$2494/CLK (sky130_fd_sc_hd__dfxtp_1)
+   0.2747    0.2747 ^ $auto$ff.cc:266:slice$2494/Q (sky130_fd_sc_hd__dfxtp_1)
+   0.0959    0.3705 ^ $abc$4871$auto$blifparse.cc:386:parse_blif$5118/X (sky130_fd_sc_hd__and2_0)
+   0.0000    0.3705 ^ $auto$ff.cc:266:slice$1471/D (sky130_fd_sc_hd__dfxtp_1)
+             0.3705   data arrival time
+
+   0.0000    0.0000   clock wclk (rise edge)
+   0.0000    0.0000   clock network delay (ideal)
+   0.0000    0.0000   clock reconvergence pessimism
+             0.0000 ^ $auto$ff.cc:266:slice$1471/CLK (sky130_fd_sc_hd__dfxtp_1)
+  -0.0367   -0.0367   library hold time
+            -0.0367   data required time
+-------------------------------------------------------------
+            -0.0367   data required time
+            -0.3705   data arrival time
+-------------------------------------------------------------
+             0.4072   slack (MET)
+
+
+wns max 0.00
+tns max 0.00
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             4.50e-03   1.52e-04   4.45e-09   4.65e-03  91.9%
+Combinational          2.88e-04   1.24e-04   3.02e-09   4.13e-04   8.1%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  4.79e-03   2.76e-04   7.46e-09   5.07e-03 100.0%
+                          94.5%       5.5%       0.0%
+% 

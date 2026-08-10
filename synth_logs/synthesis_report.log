@@ -1,0 +1,1409 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Executing script file `synth.ys' --
+
+1. Executing Verilog-2005 frontend: design/async_fifo.sv
+Parsing SystemVerilog input from `design/async_fifo.sv' to AST representation.
+Generating RTLIL representation for module `\async_fifo'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: design/fifo_memory.sv
+Parsing SystemVerilog input from `design/fifo_memory.sv' to AST representation.
+Generating RTLIL representation for module `\fifo_memory'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: design/operation_control.sv
+Parsing SystemVerilog input from `design/operation_control.sv' to AST representation.
+Generating RTLIL representation for module `\operation_control'.
+Successfully finished Verilog frontend.
+
+4. Executing Verilog-2005 frontend: design/single_flop.sv
+Parsing SystemVerilog input from `design/single_flop.sv' to AST representation.
+Generating RTLIL representation for module `\single_flop'.
+Successfully finished Verilog frontend.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     \fifo_memory
+Used module:     \single_flop
+Used module:     \operation_control
+Parameter \N = 16
+Parameter \D = 32
+
+5.2. Executing AST frontend in derive mode using pre-parsed AST for module `\fifo_memory'.
+Parameter \N = 16
+Parameter \D = 32
+Generating RTLIL representation for module `$paramod$983836ff8b8ebc78db214a53f79353fd8c13b707\fifo_memory'.
+Parameter \N = 5
+
+5.3. Executing AST frontend in derive mode using pre-parsed AST for module `\single_flop'.
+Parameter \N = 5
+Generating RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 5
+Found cached RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 5
+Found cached RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 5
+Found cached RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 16
+
+5.4. Executing AST frontend in derive mode using pre-parsed AST for module `\operation_control'.
+Parameter \N = 16
+Generating RTLIL representation for module `$paramod\operation_control\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\operation_control\N=s32'00000000000000000000000000010000'.
+Reprocessing module async_fifo because instantiated module single_flop has become available.
+Generating RTLIL representation for module `\async_fifo'.
+
+5.5. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     \fifo_memory
+Used module:     \single_flop
+Used module:     \operation_control
+Parameter \N = 16
+Parameter \D = 32
+Found cached RTLIL representation for module `$paramod$983836ff8b8ebc78db214a53f79353fd8c13b707\fifo_memory'.
+Parameter \N = 5
+Found cached RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 5
+Found cached RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 5
+Found cached RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 5
+Found cached RTLIL representation for module `$paramod\single_flop\N=s32'00000000000000000000000000000101'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\operation_control\N=s32'00000000000000000000000000010000'.
+Parameter \N = 16
+Found cached RTLIL representation for module `$paramod\operation_control\N=s32'00000000000000000000000000010000'.
+
+5.6. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod$983836ff8b8ebc78db214a53f79353fd8c13b707\fifo_memory
+Used module:     $paramod\single_flop\N=s32'00000000000000000000000000000101
+Used module:     $paramod\operation_control\N=s32'00000000000000000000000000010000
+
+5.7. Analyzing design hierarchy..
+Top module:  \async_fifo
+Used module:     $paramod$983836ff8b8ebc78db214a53f79353fd8c13b707\fifo_memory
+Used module:     $paramod\single_flop\N=s32'00000000000000000000000000000101
+Used module:     $paramod\operation_control\N=s32'00000000000000000000000000010000
+Removing unused module `\single_flop'.
+Removing unused module `\operation_control'.
+Removing unused module `\fifo_memory'.
+Removed 3 unused modules.
+
+6. Executing FLATTEN pass (flatten design).
+Deleting now unused module $paramod\single_flop\N=s32'00000000000000000000000000000101.
+Deleting now unused module $paramod$983836ff8b8ebc78db214a53f79353fd8c13b707\fifo_memory.
+Deleting now unused module $paramod\operation_control\N=s32'00000000000000000000000000010000.
+<suppressed ~7 debug messages>
+
+7. Executing PROC pass (convert processes to netlists).
+
+7.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+7.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $flatten\FIFO.$proc$design/fifo_memory.sv:35$124 in module async_fifo.
+Marked 2 switch rules as full_case in process $flatten\R_CROSSED_1.$proc$design/single_flop.sv:30$179 in module async_fifo.
+Marked 2 switch rules as full_case in process $flatten\R_CROSSED_0.$proc$design/single_flop.sv:30$179 in module async_fifo.
+Marked 2 switch rules as full_case in process $flatten\W_CROSSED_1.$proc$design/single_flop.sv:30$179 in module async_fifo.
+Marked 2 switch rules as full_case in process $flatten\W_CROSSED_0.$proc$design/single_flop.sv:30$179 in module async_fifo.
+Marked 1 switch rules as full_case in process $flatten\read_handler.$proc$design/operation_control.sv:44$183 in module async_fifo.
+Marked 1 switch rules as full_case in process $flatten\read_handler.$proc$design/operation_control.sv:49$185 in module async_fifo.
+Marked 1 switch rules as full_case in process $flatten\read_handler.$proc$design/operation_control.sv:54$187 in module async_fifo.
+Marked 1 switch rules as full_case in process $flatten\write_handler.$proc$design/operation_control.sv:44$183 in module async_fifo.
+Marked 1 switch rules as full_case in process $flatten\write_handler.$proc$design/operation_control.sv:49$185 in module async_fifo.
+Marked 1 switch rules as full_case in process $flatten\write_handler.$proc$design/operation_control.sv:54$187 in module async_fifo.
+Removed a total of 0 dead cases.
+
+7.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 10 redundant assignments.
+Promoted 29 assignments to connections.
+
+7.4. Executing PROC_INIT pass (extract init attributes).
+
+7.5. Executing PROC_ARST pass (detect async resets in processes).
+
+7.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~16 debug messages>
+
+7.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+     1/29: $flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:41$122_EN[31:0]$172
+     2/29: $flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:41$122_DATA[31:0]$171
+     3/29: $flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:41$122_ADDR[3:0]$170
+     4/29: $flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:42$123_EN[31:0]$175
+     5/29: $flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:42$123_DATA[31:0]$174
+     6/29: $flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:42$123_ADDR[3:0]$173
+     7/29: $flatten\FIFO.$1\i[31:0]
+     8/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$121_EN[31:0]$163
+     9/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$120_EN[31:0]$162
+    10/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$119_EN[31:0]$161
+    11/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$118_EN[31:0]$160
+    12/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$117_EN[31:0]$159
+    13/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$116_EN[31:0]$158
+    14/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$115_EN[31:0]$157
+    15/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$114_EN[31:0]$156
+    16/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$113_EN[31:0]$155
+    17/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$112_EN[31:0]$154
+    18/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$111_EN[31:0]$153
+    19/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$110_EN[31:0]$152
+    20/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$109_EN[31:0]$151
+    21/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$108_EN[31:0]$150
+    22/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$107_EN[31:0]$149
+    23/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:38$106_EN[31:0]$148
+    24/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:42$123_EN[31:0]$169
+    25/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:42$123_DATA[31:0]$168
+    26/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:42$123_ADDR[3:0]$167
+    27/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:41$122_EN[31:0]$166
+    28/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:41$122_DATA[31:0]$165
+    29/29: $flatten\FIFO.$1$memwr$\mem$design/fifo_memory.sv:41$122_ADDR[3:0]$164
+Creating decoders for process `\async_fifo.$flatten\R_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+     1/1: $flatten\R_CROSSED_1.$0\d_out_reg[4:0]
+Creating decoders for process `\async_fifo.$flatten\R_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+     1/1: $flatten\R_CROSSED_0.$0\d_out_reg[4:0]
+Creating decoders for process `\async_fifo.$flatten\W_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+     1/1: $flatten\W_CROSSED_1.$0\d_out_reg[4:0]
+Creating decoders for process `\async_fifo.$flatten\W_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+     1/1: $flatten\W_CROSSED_0.$0\d_out_reg[4:0]
+Creating decoders for process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:44$183'.
+     1/1: $flatten\read_handler.$0\out_addr_reg[4:0]
+Creating decoders for process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:49$185'.
+     1/1: $flatten\read_handler.$0\fifo_status_reg[0:0]
+Creating decoders for process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:54$187'.
+     1/1: $flatten\read_handler.$0\gray_out[4:0]
+Creating decoders for process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:0$200'.
+Creating decoders for process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:44$183'.
+     1/1: $flatten\write_handler.$0\out_addr_reg[4:0]
+Creating decoders for process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:49$185'.
+     1/1: $flatten\write_handler.$0\fifo_status_reg[0:0]
+Creating decoders for process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:54$187'.
+     1/1: $flatten\write_handler.$0\gray_out[4:0]
+Creating decoders for process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:0$200'.
+
+7.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\async_fifo.\read_handler.B2G$func$design/operation_control.sv:65$181.$result' from process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:0$200'.
+No latch inferred for signal `\async_fifo.\read_handler.B2G$func$design/operation_control.sv:65$182.$result' from process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:0$200'.
+No latch inferred for signal `\async_fifo.\read_handler.B2G$func$design/operation_control.sv:65$182.in0' from process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:0$200'.
+No latch inferred for signal `\async_fifo.\write_handler.B2G$func$design/operation_control.sv:65$181.$result' from process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:0$200'.
+No latch inferred for signal `\async_fifo.\write_handler.B2G$func$design/operation_control.sv:65$182.$result' from process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:0$200'.
+No latch inferred for signal `\async_fifo.\write_handler.B2G$func$design/operation_control.sv:65$182.in0' from process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:0$200'.
+
+7.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\async_fifo.\FIFO.i' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$363' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$106_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$364' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$107_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$365' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$108_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$366' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$109_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$367' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$110_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$368' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$111_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$369' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$112_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$370' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$113_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$371' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$114_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$372' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$115_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$373' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$116_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$374' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$117_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$375' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$118_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$376' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$119_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$377' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$120_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$378' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:38$121_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$379' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:41$122_ADDR' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$380' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:41$122_DATA' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$381' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:41$122_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$382' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:42$123_ADDR' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$383' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:42$123_DATA' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$384' with positive edge clock.
+Creating register for signal `\async_fifo.$flatten\FIFO.$memwr$\mem$design/fifo_memory.sv:42$123_EN' using process `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+  created $dff cell `$procdff$385' with positive edge clock.
+Creating register for signal `\async_fifo.\R_CROSSED_1.d_out_reg' using process `\async_fifo.$flatten\R_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+  created $dff cell `$procdff$386' with positive edge clock.
+Creating register for signal `\async_fifo.\R_CROSSED_0.d_out_reg' using process `\async_fifo.$flatten\R_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+  created $dff cell `$procdff$387' with positive edge clock.
+Creating register for signal `\async_fifo.\W_CROSSED_1.d_out_reg' using process `\async_fifo.$flatten\W_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+  created $dff cell `$procdff$388' with positive edge clock.
+Creating register for signal `\async_fifo.\W_CROSSED_0.d_out_reg' using process `\async_fifo.$flatten\W_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+  created $dff cell `$procdff$389' with positive edge clock.
+Creating register for signal `\async_fifo.\read_handler.out_addr_reg' using process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:44$183'.
+  created $dff cell `$procdff$390' with positive edge clock.
+Creating register for signal `\async_fifo.\read_handler.fifo_status_reg' using process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:49$185'.
+  created $dff cell `$procdff$391' with positive edge clock.
+Creating register for signal `\async_fifo.\read_handler.gray_out' using process `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:54$187'.
+  created $dff cell `$procdff$392' with positive edge clock.
+Creating register for signal `\async_fifo.\write_handler.out_addr_reg' using process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:44$183'.
+  created $dff cell `$procdff$393' with positive edge clock.
+Creating register for signal `\async_fifo.\write_handler.fifo_status_reg' using process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:49$185'.
+  created $dff cell `$procdff$394' with positive edge clock.
+Creating register for signal `\async_fifo.\write_handler.gray_out' using process `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:54$187'.
+  created $dff cell `$procdff$395' with positive edge clock.
+
+7.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+7.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 2 empty switches in `\async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+Removing empty process `async_fifo.$flatten\FIFO.$proc$design/fifo_memory.sv:35$124'.
+Found and cleaned up 2 empty switches in `\async_fifo.$flatten\R_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+Removing empty process `async_fifo.$flatten\R_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+Found and cleaned up 2 empty switches in `\async_fifo.$flatten\R_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+Removing empty process `async_fifo.$flatten\R_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+Found and cleaned up 2 empty switches in `\async_fifo.$flatten\W_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+Removing empty process `async_fifo.$flatten\W_CROSSED_1.$proc$design/single_flop.sv:30$179'.
+Found and cleaned up 2 empty switches in `\async_fifo.$flatten\W_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+Removing empty process `async_fifo.$flatten\W_CROSSED_0.$proc$design/single_flop.sv:30$179'.
+Found and cleaned up 1 empty switch in `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:44$183'.
+Removing empty process `async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:44$183'.
+Found and cleaned up 1 empty switch in `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:49$185'.
+Removing empty process `async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:49$185'.
+Found and cleaned up 1 empty switch in `\async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:54$187'.
+Removing empty process `async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:54$187'.
+Removing empty process `async_fifo.$flatten\read_handler.$proc$design/operation_control.sv:0$200'.
+Found and cleaned up 1 empty switch in `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:44$183'.
+Removing empty process `async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:44$183'.
+Found and cleaned up 1 empty switch in `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:49$185'.
+Removing empty process `async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:49$185'.
+Found and cleaned up 1 empty switch in `\async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:54$187'.
+Removing empty process `async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:54$187'.
+Removing empty process `async_fifo.$flatten\write_handler.$proc$design/operation_control.sv:0$200'.
+Cleaned up 16 empty switches.
+
+7.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~47 debug messages>
+
+8. Executing OPT pass (performing simple optimizations).
+
+8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+<suppressed ~27 debug messages>
+Removed a total of 9 cells.
+
+8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$250.
+    dead port 2/2 on $mux $procmux$244.
+    dead port 2/2 on $mux $procmux$238.
+    dead port 2/2 on $mux $procmux$232.
+    dead port 2/2 on $mux $procmux$226.
+    dead port 2/2 on $mux $procmux$220.
+    dead port 1/2 on $mux $flatten\read_handler.$ternary$design/operation_control.sv:62$193.
+    dead port 2/2 on $mux $flatten\read_handler.$ternary$design/operation_control.sv:62$193.
+    dead port 1/2 on $mux $flatten\write_handler.$ternary$design/operation_control.sv:62$190.
+    dead port 2/2 on $mux $flatten\write_handler.$ternary$design/operation_control.sv:62$190.
+Removed 10 multiplexer ports.
+<suppressed ~36 debug messages>
+
+8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+    Consolidated identical input bits for $mux cell $procmux$301:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$301_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$301_Y [0]
+      New connections: $procmux$301_Y [31:1] = { $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] $procmux$301_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$298:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$298_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$298_Y [0]
+      New connections: $procmux$298_Y [31:1] = { $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] $procmux$298_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$295:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$295_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$295_Y [0]
+      New connections: $procmux$295_Y [31:1] = { $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] $procmux$295_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$292:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$292_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$292_Y [0]
+      New connections: $procmux$292_Y [31:1] = { $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] $procmux$292_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$289:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$289_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$289_Y [0]
+      New connections: $procmux$289_Y [31:1] = { $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] $procmux$289_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$286:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$286_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$286_Y [0]
+      New connections: $procmux$286_Y [31:1] = { $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] $procmux$286_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$283:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$283_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$283_Y [0]
+      New connections: $procmux$283_Y [31:1] = { $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] $procmux$283_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$280:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$280_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$280_Y [0]
+      New connections: $procmux$280_Y [31:1] = { $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$277:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$277_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$277_Y [0]
+      New connections: $procmux$277_Y [31:1] = { $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] $procmux$277_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$274:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$274_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$274_Y [0]
+      New connections: $procmux$274_Y [31:1] = { $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] $procmux$274_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$271:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$271_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$271_Y [0]
+      New connections: $procmux$271_Y [31:1] = { $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] $procmux$271_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$268:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$268_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$268_Y [0]
+      New connections: $procmux$268_Y [31:1] = { $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] $procmux$268_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$265:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$265_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$265_Y [0]
+      New connections: $procmux$265_Y [31:1] = { $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] $procmux$265_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$262:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$262_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$262_Y [0]
+      New connections: $procmux$262_Y [31:1] = { $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] $procmux$262_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$259:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$259_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$259_Y [0]
+      New connections: $procmux$259_Y [31:1] = { $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] $procmux$259_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$256:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$256_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$256_Y [0]
+      New connections: $procmux$256_Y [31:1] = { $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] $procmux$256_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$235:
+      Old ports: A=32'11111111111111111111111111111111, B=0, Y=$procmux$235_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$235_Y [0]
+      New connections: $procmux$235_Y [31:1] = { $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] $procmux$235_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$217:
+      Old ports: A=0, B=32'11111111111111111111111111111111, Y=$procmux$217_Y
+      New ports: A=1'0, B=1'1, Y=$procmux$217_Y [0]
+      New connections: $procmux$217_Y [31:1] = { $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] $procmux$217_Y [0] }
+  Optimizing cells in module \async_fifo.
+    Consolidated identical input bits for $mux cell $procmux$313:
+      Old ports: A=0, B=$flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:41$122_EN[31:0]$172, Y=$procmux$313_Y
+      New ports: A=1'0, B=$procmux$217_Y [0], Y=$procmux$313_Y [0]
+      New connections: $procmux$313_Y [31:1] = { $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] $procmux$313_Y [0] }
+    Consolidated identical input bits for $mux cell $procmux$304:
+      Old ports: A=0, B=$flatten\FIFO.$2$memwr$\mem$design/fifo_memory.sv:42$123_EN[31:0]$175, Y=$procmux$304_Y
+      New ports: A=1'0, B=$procmux$235_Y [0], Y=$procmux$304_Y [0]
+      New connections: $procmux$304_Y [31:1] = { $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] $procmux$304_Y [0] }
+  Optimizing cells in module \async_fifo.
+Performed a total of 20 changes.
+
+8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+<suppressed ~90 debug messages>
+Removed a total of 30 cells.
+
+8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$389 ($dff) from module async_fifo (D = $procmux$340_Y, Q = \W_CROSSED_0.d_out_reg, rval = 5'00000).
+Adding SRST signal on $procdff$390 ($dff) from module async_fifo (D = $flatten\read_handler.$ternary$design/operation_control.sv:71$199_Y [4:0], Q = \read_handler.out_addr_reg, rval = 5'00000).
+Adding SRST signal on $procdff$391 ($dff) from module async_fifo (D = $flatten\read_handler.$ternary$design/operation_control.sv:62$194_Y, Q = \read_handler.fifo_status_reg, rval = 1'0).
+Adding SRST signal on $procdff$392 ($dff) from module async_fifo (D = \read_handler.B2G$func$design/operation_control.sv:65$181.$result, Q = \read_handler.gray_out, rval = 5'00000).
+Adding SRST signal on $procdff$393 ($dff) from module async_fifo (D = $flatten\write_handler.$ternary$design/operation_control.sv:71$199_Y [4:0], Q = \write_handler.out_addr_reg, rval = 5'00000).
+Adding SRST signal on $procdff$394 ($dff) from module async_fifo (D = $flatten\write_handler.$ternary$design/operation_control.sv:62$194_Y, Q = \write_handler.fifo_status_reg, rval = 1'0).
+Adding SRST signal on $procdff$395 ($dff) from module async_fifo (D = \write_handler.B2G$func$design/operation_control.sv:65$181.$result, Q = \write_handler.gray_out, rval = 5'00000).
+Adding EN signal on $procdff$363 ($dff) from module async_fifo (D = 16, Q = \FIFO.i).
+Adding SRST signal on $procdff$386 ($dff) from module async_fifo (D = $procmux$322_Y, Q = \R_CROSSED_1.d_out_reg, rval = 5'00000).
+Adding SRST signal on $procdff$387 ($dff) from module async_fifo (D = $procmux$328_Y, Q = \R_CROSSED_0.d_out_reg, rval = 5'00000).
+Adding SRST signal on $procdff$388 ($dff) from module async_fifo (D = $procmux$334_Y, Q = \W_CROSSED_1.d_out_reg, rval = 5'00000).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 1 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 2 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 3 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 1-bit at position 4 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 5 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 6 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 7 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 8 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 9 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 10 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 11 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 12 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 13 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 14 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 15 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 16 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 17 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 18 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 19 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 20 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 21 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 22 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 23 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 24 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 25 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 26 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 27 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 28 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 29 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 30 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+Setting constant 0-bit at position 31 on $auto$ff.cc:266:slice$421 ($dffe) from module async_fifo.
+
+8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 23 unused cells and 212 unused wires.
+<suppressed ~26 debug messages>
+
+8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+8.16. Finished OPT passes. (There is nothing left to do.)
+
+9. Executing FSM pass (extract and optimize FSM).
+
+9.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+9.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+9.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+9.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+9.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+9.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+9.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+10. Executing OPT pass (performing simple optimizations).
+
+10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+10.9. Finished OPT passes. (There is nothing left to do.)
+
+11. Executing MEMORY pass.
+
+11.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+11.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 120 transformations.
+
+11.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+  Analyzing async_fifo.FIFO.mem write port 0.
+  Analyzing async_fifo.FIFO.mem write port 1.
+  Analyzing async_fifo.FIFO.mem write port 2.
+  Analyzing async_fifo.FIFO.mem write port 3.
+  Analyzing async_fifo.FIFO.mem write port 4.
+  Analyzing async_fifo.FIFO.mem write port 5.
+  Analyzing async_fifo.FIFO.mem write port 6.
+  Analyzing async_fifo.FIFO.mem write port 7.
+  Analyzing async_fifo.FIFO.mem write port 8.
+  Analyzing async_fifo.FIFO.mem write port 9.
+  Analyzing async_fifo.FIFO.mem write port 10.
+  Analyzing async_fifo.FIFO.mem write port 11.
+  Analyzing async_fifo.FIFO.mem write port 12.
+  Analyzing async_fifo.FIFO.mem write port 13.
+  Analyzing async_fifo.FIFO.mem write port 14.
+  Analyzing async_fifo.FIFO.mem write port 15.
+  Analyzing async_fifo.FIFO.mem write port 16.
+  Analyzing async_fifo.FIFO.mem write port 17.
+Populating enable bits on write ports of memory async_fifo.FIFO.mem with async read feedback:
+    Port 17 bit 31: added enable logic for 1 different cases.
+    Port 17 bit 30: added enable logic for 1 different cases.
+    Port 17 bit 29: added enable logic for 1 different cases.
+    Port 17 bit 28: added enable logic for 1 different cases.
+    Port 17 bit 27: added enable logic for 1 different cases.
+    Port 17 bit 26: added enable logic for 1 different cases.
+    Port 17 bit 25: added enable logic for 1 different cases.
+    Port 17 bit 24: added enable logic for 1 different cases.
+    Port 17 bit 23: added enable logic for 1 different cases.
+    Port 17 bit 22: added enable logic for 1 different cases.
+    Port 17 bit 21: added enable logic for 1 different cases.
+    Port 17 bit 20: added enable logic for 1 different cases.
+    Port 17 bit 19: added enable logic for 1 different cases.
+    Port 17 bit 18: added enable logic for 1 different cases.
+    Port 17 bit 17: added enable logic for 1 different cases.
+    Port 17 bit 16: added enable logic for 1 different cases.
+    Port 17 bit 15: added enable logic for 1 different cases.
+    Port 17 bit 14: added enable logic for 1 different cases.
+    Port 17 bit 13: added enable logic for 1 different cases.
+    Port 17 bit 12: added enable logic for 1 different cases.
+    Port 17 bit 11: added enable logic for 1 different cases.
+    Port 17 bit 10: added enable logic for 1 different cases.
+    Port 17 bit 9: added enable logic for 1 different cases.
+    Port 17 bit 8: added enable logic for 1 different cases.
+    Port 17 bit 7: added enable logic for 1 different cases.
+    Port 17 bit 6: added enable logic for 1 different cases.
+    Port 17 bit 5: added enable logic for 1 different cases.
+    Port 17 bit 4: added enable logic for 1 different cases.
+    Port 17 bit 3: added enable logic for 1 different cases.
+    Port 17 bit 2: added enable logic for 1 different cases.
+    Port 17 bit 1: added enable logic for 1 different cases.
+    Port 17 bit 0: added enable logic for 1 different cases.
+
+11.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+11.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+Checking read port `\FIFO.mem'[0] in module `\async_fifo': no output FF found.
+Checking read port address `\FIFO.mem'[0] in module `\async_fifo': address FF clock is not compatible with write clock.
+
+11.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+11.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+Consolidating write ports of memory async_fifo.FIFO.mem by address:
+  Merging ports 0, 1 (address 0).
+  Merging ports 0, 2 (address 0).
+  Merging ports 0, 3 (address 0).
+  Merging ports 0, 4 (address 0).
+  Merging ports 0, 5 (address 0).
+  Merging ports 0, 6 (address 0).
+  Merging ports 0, 7 (address 0).
+  Merging ports 0, 8 (address 0).
+  Merging ports 0, 9 (address 0).
+  Merging ports 0, 10 (address 0).
+  Merging ports 0, 11 (address 0).
+  Merging ports 0, 12 (address 0).
+  Merging ports 0, 13 (address 0).
+  Merging ports 0, 14 (address 0).
+  Merging ports 0, 15 (address 0).
+  Merging ports 16, 17 (address { 28'0000000000000000000000000000 \write_handler.out_addr_reg [3:0] }).
+Consolidating write ports of memory async_fifo.FIFO.mem by address:
+Consolidating write ports of memory async_fifo.FIFO.mem using sat-based resource sharing:
+
+11.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+11.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+11.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+11.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+Mapping memory \FIFO.mem in module \async_fifo:
+  created 16 $dff cells and 0 static cells of width 32.
+  read interface: 0 $dff and 15 $mux cells.
+  write interface: 32 write mux blocks.
+
+12. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+13. Executing OPT pass (performing simple optimizations).
+
+13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~99 debug messages>
+
+13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$301.
+    dead port 2/2 on $mux $procmux$301.
+Removed 2 multiplexer ports.
+<suppressed ~24 debug messages>
+
+13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+13.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 0 unused cells and 112 unused wires.
+<suppressed ~1 debug messages>
+
+13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+13.13. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $memory\FIFO.mem[9]$453 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[9][1][0]$y$719, Q = \FIFO.mem[9]).
+Adding EN signal on $memory\FIFO.mem[8]$451 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[8][1][0]$y$703, Q = \FIFO.mem[8]).
+Adding EN signal on $memory\FIFO.mem[7]$449 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[7][1][0]$y$683, Q = \FIFO.mem[7]).
+Adding EN signal on $memory\FIFO.mem[6]$447 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[6][1][0]$y$667, Q = \FIFO.mem[6]).
+Adding EN signal on $memory\FIFO.mem[5]$445 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[5][1][0]$y$651, Q = \FIFO.mem[5]).
+Adding EN signal on $memory\FIFO.mem[4]$443 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[4][1][0]$y$635, Q = \FIFO.mem[4]).
+Adding EN signal on $memory\FIFO.mem[3]$441 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[3][1][0]$y$615, Q = \FIFO.mem[3]).
+Adding EN signal on $memory\FIFO.mem[2]$439 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[2][1][0]$y$597, Q = \FIFO.mem[2]).
+Adding EN signal on $memory\FIFO.mem[1]$437 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[1][1][0]$y$577, Q = \FIFO.mem[1]).
+Adding EN signal on $memory\FIFO.mem[15]$465 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[15][1][0]$y$817, Q = \FIFO.mem[15]).
+Adding EN signal on $memory\FIFO.mem[14]$463 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[14][1][0]$y$801, Q = \FIFO.mem[14]).
+Adding EN signal on $memory\FIFO.mem[13]$461 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[13][1][0]$y$785, Q = \FIFO.mem[13]).
+Adding EN signal on $memory\FIFO.mem[12]$459 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[12][1][0]$y$769, Q = \FIFO.mem[12]).
+Adding EN signal on $memory\FIFO.mem[11]$457 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[11][1][0]$y$751, Q = \FIFO.mem[11]).
+Adding EN signal on $memory\FIFO.mem[10]$455 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[10][1][0]$y$735, Q = \FIFO.mem[10]).
+Adding EN signal on $memory\FIFO.mem[0]$435 ($dff) from module async_fifo (D = $memory\FIFO.mem$wrmux[0][1][0]$y$557, Q = \FIFO.mem[0]).
+
+13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+13.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+13.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+13.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+<suppressed ~45 debug messages>
+Removed a total of 15 cells.
+
+13.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 0 unused cells and 15 unused wires.
+<suppressed ~1 debug messages>
+
+13.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+13.23. Rerunning OPT passes. (Maybe there is more to do..)
+
+13.24. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~25 debug messages>
+
+13.25. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+13.26. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+13.27. Executing OPT_DFF pass (perform DFF optimizations).
+
+13.28. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+13.29. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+13.30. Finished OPT passes. (There is nothing left to do.)
+
+14. Executing TECHMAP pass (map to technology primitives).
+
+14.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+14.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $logic_and.
+Running "alumacc" on wrapper $extern:wrap:$add:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using template $extern:wrap:$add:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47 for cells of type $extern:wrap:$add:A_SIGNED=0:A_WIDTH=5:B_SIGNED=0:B_WIDTH=32:Y_WIDTH=32:394426c56d1a028ba8fdd5469b163e04011def47.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$b0777dc865134c8525a4aa84de8cfa938974cad1\_90_alu for cells of type $alu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000100000 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+No more expansions possible.
+<suppressed ~694 debug messages>
+
+15. Executing OPT pass (performing simple optimizations).
+
+15.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+<suppressed ~679 debug messages>
+
+15.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+<suppressed ~177 debug messages>
+Removed a total of 59 cells.
+
+15.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+15.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+15.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+15.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+15.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+Removed 4 unused cells and 342 unused wires.
+<suppressed ~5 debug messages>
+
+15.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+15.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+15.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \async_fifo..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+15.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \async_fifo.
+Performed a total of 0 changes.
+
+15.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\async_fifo'.
+Removed a total of 0 cells.
+
+15.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+15.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \async_fifo..
+
+15.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module async_fifo.
+
+15.16. Finished OPT passes. (There is nothing left to do.)
+
+16. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbn_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtn_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE|IQ&!DE' in pin attribute of cell 'sky130_fd_sc_hd__edfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfbbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfrtp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfsbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfstp_4' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sdfxtp_4' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxbp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_1' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_2' - skipping.
+Warning: Found unsupported expression 'D&DE&!SCE|IQ&!DE&!SCE|SCD&SCE' in pin attribute of cell 'sky130_fd_sc_hd__sedfxtp_4' - skipping.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+16.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\async_fifo':
+  mapped 552 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_1 cells.
+
+17. Executing ABC pass (technology mapping using ABC).
+
+17.1. Extracting gate netlist of module `\async_fifo' to `<abc-temp-dir>/input.blif'..
+Extracted 1798 gates and 2388 wires to a netlist network with 588 inputs and 584 outputs.
+
+17.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/veer_mukadam/open_pdks/sky130/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.09 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__diode_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__dlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__edfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_0".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvn_8".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__einvp_8".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_bleeder_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__lpflow_decapkapwr_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__lpflow_inputisolatch_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sdfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_1" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_2" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__sdlclkp_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__sedfxtp_4".
+ABC: Library "sky130_fd_sc_hd__tt_025C_1v80" from "/home/veer_mukadam/open_pdks/sky130/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib" has 334 cells (94 skipped: 63 seq; 13 tri-state; 18 no func; 0 dont_use).  Time =     0.12 sec
+ABC: Memory =   19.85 MB. Time =     0.12 sec
+ABC: Warning: Detected 9 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+17.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__clkinv_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__or3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and3_1 cells:       32
+ABC RESULTS:   sky130_fd_sc_hd__o2bb2ai_1 cells:       32
+ABC RESULTS:   sky130_fd_sc_hd__nand2_1 cells:       36
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_inputiso1p_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or3_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor3_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor2b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand3b_1 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__a22oi_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand4b_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nand4_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__nor4_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xor3_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__xor2_1 cells:        8
+ABC RESULTS:   sky130_fd_sc_hd__o21ai_0 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__xnor2_1 cells:       14
+ABC RESULTS:   sky130_fd_sc_hd__a21oi_1 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o2111a_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_1 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2b_1 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__nor2_1 cells:       13
+ABC RESULTS:   sky130_fd_sc_hd__lpflow_isobufsrc_1 cells:       31
+ABC RESULTS:   sky130_fd_sc_hd__a22o_1 cells:      480
+ABC RESULTS:   sky130_fd_sc_hd__mux4_2 cells:      160
+ABC RESULTS:   sky130_fd_sc_hd__and2_0 cells:       60
+ABC RESULTS:        internal signals:     1216
+ABC RESULTS:           input signals:      588
+ABC RESULTS:          output signals:      584
+Removing temp directory.
+Removed 0 unused cells and 1301 unused wires.
+
+18. Executing Verilog backend.
+
+18.1. Executing BMUXMAP pass.
+
+18.2. Executing DEMUXMAP pass.
+Dumping module `\async_fifo'.
+
+19. Printing statistics.
+
+=== async_fifo ===
+
+   Number of wires:                957
+   Number of wire bits:           1773
+   Number of public wires:          90
+   Number of public wire bits:     906
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1451
+     sky130_fd_sc_hd__a21oi_1        2
+     sky130_fd_sc_hd__a22o_1       480
+     sky130_fd_sc_hd__a22oi_1        1
+     sky130_fd_sc_hd__and2_0        60
+     sky130_fd_sc_hd__and3_1        32
+     sky130_fd_sc_hd__clkinv_1       4
+     sky130_fd_sc_hd__dfxtp_1      552
+     sky130_fd_sc_hd__lpflow_inputiso1p_1      1
+     sky130_fd_sc_hd__lpflow_isobufsrc_1     31
+     sky130_fd_sc_hd__mux4_2       160
+     sky130_fd_sc_hd__nand2_1       36
+     sky130_fd_sc_hd__nand2b_1       4
+     sky130_fd_sc_hd__nand3b_1       3
+     sky130_fd_sc_hd__nand4_1        2
+     sky130_fd_sc_hd__nand4b_1       2
+     sky130_fd_sc_hd__nor2_1        13
+     sky130_fd_sc_hd__nor2b_1        1
+     sky130_fd_sc_hd__nor3_1         3
+     sky130_fd_sc_hd__nor3b_1        1
+     sky130_fd_sc_hd__nor4_1         2
+     sky130_fd_sc_hd__o2111a_1       1
+     sky130_fd_sc_hd__o21ai_0        2
+     sky130_fd_sc_hd__o2bb2ai_1     32
+     sky130_fd_sc_hd__or3_1          2
+     sky130_fd_sc_hd__or3b_1         1
+     sky130_fd_sc_hd__xnor2_1       14
+     sky130_fd_sc_hd__xor2_1         8
+     sky130_fd_sc_hd__xor3_1         1
+
+   Chip area for module '\async_fifo': 20508.419200
+
+Warnings: 26 unique messages, 234 total
+End of script. Logfile hash: 9029b3968c, CPU: user 0.78s system 0.04s, MEM: 40.61 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 39% 1x abc (0 sec), 13% 1x dfflibmap (0 sec), ...

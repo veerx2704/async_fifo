@@ -40,6 +40,9 @@ Following is the list of files used for design and verification purposes.
     ├── write_fifo_seq.sv
     ├── write_fifo_sequencer.sv
     └── write_only.sv
+  └── synth_logs
+    ├── synthesis_report.log
+    └── timing_report.log
 ```
 
 ## Design
@@ -71,6 +74,15 @@ The design works in the following way:
 The matching at the read and write pointer happens differently. The read handler must assert empty when it catches up to the write pointer. Likewise, the write handler must assert full when it catches up to the read pointer. The read pointer can catch up to the write pointer when they both are in the same iteration, while the write pointer can catch up to the read pointer when they are in different iterations. To resolve this, an extra bit is added to the pointers to note whether there is any rollover. This extra bit is discarded when actually writing or reading from the memory.
 
 The design is free of Lint and CDC unsafe paths.
+
+## Design Specs
+
+The following screenshots are the results obtained from design implemented in AMD Vivado 2024.2
+
+![Design power](Power_report.png)
+![Design_timing](Timing_report.png)
+
+The results obtained from Yosys/OpenSTA synthesis based on Sky130 library are included in synth_logs/
 
 ## Verification
 ![Testbench](TestBench_UVM_Async_fifo.png)
