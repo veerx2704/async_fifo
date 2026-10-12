@@ -132,7 +132,7 @@ The implementation has been modified with the replacement of FIFO Memory (regist
 |---------------|-------|
 | Depth | 16 |
 | Maximum Operating Frequency | **500MHz** |
-| Total Power | **0.479mW** |
+| Total Power | **1.46mW** |
 | Total Area | **684.4 &mu;m<sup>2</sup>** |
 
 

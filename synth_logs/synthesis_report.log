@@ -803,6 +803,6 @@ Dumping module `\async_fifo'.
      of which used for sequential elements: 360.345600 (52.65%)
 
 Warnings: 13 unique messages, 22 total
-End of script. Logfile hash: 0c2760d316, time: 0.30s, user: 0.14s, system: 0.05s, MEM: 50.25 MB peak
+End of script. Logfile hash: 0c2760d316, time: 0.64s, user: 0.23s, system: 0.08s, MEM: 50.50 MB peak
 Yosys 0.68 (git sha1 38e001a6f, Release, GNU /usr/bin/c++ 13.3.0)
-Time spent: 32% 1x abc (0 sec), 22% 1x dfflibmap (0 sec), ...
+Time spent: 33% 1x abc (0 sec), 21% 1x dfflibmap (0 sec), ...

@@ -1,5 +1,7 @@
 log_begin synth_logs/timing_report.log
 read_liberty $::env(PDK_ROOT)/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_liberty $::env(PDK_ROOT)/sky130A/libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib
+
 read_verilog results/fifo_netlist.v
 link_design async_fifo
 
