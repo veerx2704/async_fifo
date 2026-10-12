@@ -114,3 +114,62 @@ This project uses two sets of agents within a single environment. Each of these 
 
 The design is also tested with non standard parameter values (non-default parameters and non powers of 2)
 The DUT passes all the above tests.
+
+
+## UPDATE
+The implementation has been modified with the replacement of FIFO Memory (registers) with SRAM macros in the Sky130 PDK. The design itself is the same, only the memory has become faster and more reliable with the SRAM macro. The internal memory now has a fixed size of 256 entries of 32-bits, and FIFO acquires a portion of this memory, however it requires. The default implementation still aims for 16 entries, but can also be expanded to 256 entries, should the clock ratio demand so.
+
+| Sr.No | Old Implementation | New Model | Advantages |
+|-------|--------------------|-----------|------------|
+| 1. | Register-based Memory | SRAM macro-based Memory | The delay from large fanout of input signals is significantly reduced, giving a new maximum operating frequency of 500MHz over the previous 200MHz with the same depth |
+| 2. | Increasing delay with higher depth | Practically very less significant change | The earlier implementation would very much fail to achieve timing constraint of 100MHz when the depth was increased beyond 64, but the new implementation can maintain the maximum operating frequency of 350MHz even at a depth of 256, yielding a much more efficient FIFO |
+| 3. | Module-wise discrete traceability | Block-wise discrete traceability | The new model realigns the design slightly, to attain a more block-oriented approach which ensures that the interacting blocks in the design are not the fundamental components of any generic design, but rather those of an asynchronous fifo |
+| 4. | Vivado-based CDC check | Vivado + rtl-buddy-cdc check | The previous design relied solely on the CDC reports of Vivado, while the new model is certified CDC safe by both Vivado and the open-source CDC tool **rtl-buddy-cdc** |
+| 5. | Manual invocation | Automated invocation | The old implementation had a long, manual invocation procedure, now fully automated by a Makefile |
+
+### Steps to run the design (CDC/Synthesis/STA)
+
+|**Pre-requisites**| Version |
+|--------------------|---------|
+| Yosys | 0.68 or higher |
+| OpenSTA | 3.1.0 |
+| uv | 0.13.0 |
+| rtl-buddy-cdc | 0.5.0 |
+| make | any |
+| Sky130 PDK| - |
+
+
+1. Once rtl-buddy-cdc is installed, cd to its directory and copy **Makefile** and **cdc_checker.sh** there. Now run the following command in your terminal:
+
+```
+make cdc_check \
+  DESIGN_TOP=<top_module>
+  DESIGN_DIR=<path_to_design_files>
+  CONSTR=<name_of_constraint_file (.SDC or .XDC)>
+  CONSTR_DIR=<path_to_constraint_file (Optional, Default - DESIGN_DIR)>
+  CDC_OUTPUT=<name_of_output_json_file (Optional, Stored always at DESIGN_DIR/../CDC_REPORTS, Default name - TOP_MODULE_cdc_report.json)>
+```
+
+You could also go to the Makefile and remove the `--sv` switch from cdc_checker if the design is purely verilog.
+
+You could also run **cdc_checker.sh** directly in the same terminal, inside **rtl-buddy-cdc**. Use `cdc_checker.sh --help` or `cdc_checker.sh -h`
+
+2. To do synthesis, just run
+
+```
+make synthesis
+```
+To specify any synthesis parameters to yosys, please modify **synth.ys**. Synthesis logs will be stored in synth_logs
+
+3. To check timing, run
+
+```
+make tpower
+```
+To specify and timing parameters or other reports, **modify async_fifo_sta.tcl**. Timing and power logs will be stored in synth_logs
+
+4. To run both synthesis and sta analysis, you can also do:
+
+```
+make all
+```

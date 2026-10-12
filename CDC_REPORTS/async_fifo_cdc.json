@@ -1,0 +1,85 @@
+{
+  "tool": {
+    "name": "rtl-buddy-cdc",
+    "version": "0.5.0"
+  },
+  "module": "async_fifo",
+  "summary": {
+    "ports": 10,
+    "cells": 55,
+    "flops": 10,
+    "crossings": 2,
+    "async_crossings": 2,
+    "violations": 0,
+    "suppressed": 0,
+    "baseline_carryover": 0,
+    "scan_mode_suppressed": 0,
+    "domain_unknown": 0
+  },
+  "domain_unknown_flops": [],
+  "inferred_clock_candidates": [],
+  "by_instance": [],
+  "domains": [
+    {
+      "flop": "$flatten\\R_CROSSED_0.$procdff$131",
+      "clock": "wclk"
+    },
+    {
+      "flop": "$flatten\\R_CROSSED_0.$procdff$132",
+      "clock": "wclk"
+    },
+    {
+      "flop": "$flatten\\W_CROSSED_0.$procdff$131",
+      "clock": "rclk"
+    },
+    {
+      "flop": "$flatten\\W_CROSSED_0.$procdff$132",
+      "clock": "rclk"
+    },
+    {
+      "flop": "$flatten\\read_handler.$procdff$139",
+      "clock": "rclk"
+    },
+    {
+      "flop": "$flatten\\read_handler.$procdff$140",
+      "clock": "rclk"
+    },
+    {
+      "flop": "$flatten\\write_handler.$procdff$139",
+      "clock": "wclk"
+    },
+    {
+      "flop": "$flatten\\write_handler.$procdff$140",
+      "clock": "wclk"
+    },
+    {
+      "flop": "$procdff$133",
+      "clock": "rclk"
+    },
+    {
+      "flop": "$procdff$136",
+      "clock": "wclk"
+    }
+  ],
+  "crossings": [
+    {
+      "src_clock": "rclk",
+      "dst_clock": "wclk",
+      "dst_flop": "$flatten\\R_CROSSED_0.$procdff$131",
+      "width": 1,
+      "min_hops": 1,
+      "src_flop": "$procdff$133"
+    },
+    {
+      "src_clock": "wclk",
+      "dst_clock": "rclk",
+      "dst_flop": "$flatten\\W_CROSSED_0.$procdff$131",
+      "width": 1,
+      "min_hops": 1,
+      "src_flop": "$procdff$136"
+    }
+  ],
+  "violations": [],
+  "suppressed": [],
+  "baseline_carryover": []
+}
