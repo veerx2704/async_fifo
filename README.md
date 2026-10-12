@@ -127,6 +127,15 @@ The implementation has been modified with the replacement of FIFO Memory (regist
 | 4. | Vivado-based CDC check | Vivado + rtl-buddy-cdc check | The previous design relied solely on the CDC reports of Vivado, while the new model is certified CDC safe by both Vivado and the open-source CDC tool **rtl-buddy-cdc** |
 | 5. | Manual invocation | Automated invocation | The old implementation had a long, manual invocation procedure, now fully automated by a Makefile |
 
+### Updated Specs
+| Specification | Value |
+|---------------|-------|
+| Depth | 16 |
+| Maximum Operating Frequency | **500MHz** |
+| Total Power | **0.479mW** |
+| Total Area | **684.4 &mu;m<sup>2</sup>** |
+
+
 ### Steps to run the design (CDC/Synthesis/STA)
 
 |**Pre-requisites**| Version |
