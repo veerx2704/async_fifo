@@ -19,9 +19,9 @@ synthesis: yosys_flow.sh
 	@./yosys_flow.sh
 	@echo "Synthesis Complete! Output recorded at yosys_log.log"
 
-tpower: cache_sta.tcl timing_check.sh
+tpower: async_fifo_sta.tcl timing_check.sh
 	@echo "Opening Timing and Power Simulation"
-	@./cache_sta.tcl > power_timing_report.log
+	@sta async_fifo_sta.tcl
 	@./timing_check.sh
 
 
