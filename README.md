@@ -7,42 +7,63 @@ The Asynchronous FIFO is a dual clock circuit which reads and writes at differen
 Following is the list of files used for design and verification purposes.
 
 
-```├── README.md
+```
+async_fifo/
+├── Async_FIFO_BD.png
+├── CDC_REPORTS
+│   ├── async_fifo_cdc.json
+│   └── async_fifo_cdc_report.json
+├── Makefile
+├── Power_Report.png
+├── README.md
+├── TestBench_UVM_Async_fifo.png
+├── Timing_Report.png
+├── async_fifo_sta.tcl
+├── cdc_checker.sh
 ├── design
 │   ├── async_fifo.sv
 │   ├── fifo_memory.sv
+│   ├── input_constr.xdc
 │   ├── operation_control.sv
 │   └── single_flop.sv
-└── testbench_uvm
-    ├── base_test.sv
-    ├── case0.sv
-    ├── case1.sv
-    ├── case2.sv
-    ├── define.sv
-    ├── dummy_diff.sv
-    ├── fifo_env.sv
-    ├── fifo_interface.sv
-    ├── read_fifo_agent.sv
-    ├── read_fifo_driver.sv
-    ├── read_fifo_monitor.sv
-    ├── read_fifo_seq.sv
-    ├── read_fifo_sequencer.sv
-    ├── read_fifo_transaction.sv
-    ├── read_only.sv
-    ├── reference_model.sv
-    ├── scoreboard.sv
-    ├── testbench.sv
-    ├── transaction.sv
-    ├── virtual_sequencer.sv
-    ├── write_fifo_agent.sv
-    ├── write_fifo_driver.sv
-    ├── write_fifo_monitor.sv
-    ├── write_fifo_seq.sv
-    ├── write_fifo_sequencer.sv
-    └── write_only.sv
-  └── synth_logs
-    ├── synthesis_report.log
-    └── timing_report.log
+├── design_sky130
+│   ├── async_fifo.sv
+│   ├── fifo_memory.sv
+│   ├── input_constr.xdc
+│   ├── operation_control.sv
+│   └── two_flop_sync.sv
+├── results
+│   └── fifo_netlist.v
+├── synth.ys
+├── synth_logs
+│   ├── synthesis_report.log
+│   └── timing_report.log
+├── testbench_uvm
+│   ├── base_test.sv
+│   ├── define.sv
+│   ├── fifo_env.sv
+│   ├── fifo_interface.sv
+│   ├── long_test.sv
+│   ├── parallel_or_exclusive.sv
+│   ├── random_burst.sv
+│   ├── read_fifo_agent.sv
+│   ├── read_fifo_driver.sv
+│   ├── read_fifo_monitor.sv
+│   ├── read_fifo_seq.sv
+│   ├── read_fifo_sequencer.sv
+│   ├── read_fifo_transaction.sv
+│   ├── reference_model.sv
+│   ├── scoreboard.sv
+│   ├── testbench.sv
+│   ├── transaction.sv
+│   ├── virtual_sequencer.sv
+│   ├── write_fifo_agent.sv
+│   ├── write_fifo_driver.sv
+│   ├── write_fifo_monitor.sv
+│   ├── write_fifo_seq.sv
+│   └── write_fifo_sequencer.sv
+├── timing_check.sh
+└── yosys_flow.sh
 ```
 
 ## Design

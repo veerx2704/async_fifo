@@ -21,8 +21,8 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
   wire fifo_full;
   output fifo_empty;
   wire fifo_empty;
-  wire [4:0] \B2G$func$design_sky130/async_fifo.sv:74$83.in0 ;
-  wire [4:0] \B2G$func$design_sky130/async_fifo.sv:82$84.in0 ;
+  wire [4:0] \B2G$func$design_sky130/async_fifo.sv:74$69.in0 ;
+  wire [4:0] \B2G$func$design_sky130/async_fifo.sv:82$70.in0 ;
   wire [9:0] \FIFO.addr0 ;
   wire [9:0] \FIFO.addr1 ;
   wire \FIFO.clk ;
@@ -41,19 +41,19 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
   wire [4:0] \R_CROSSED_0.d_out_reg0 ;
   wire \R_CROSSED_0.d_out_reg0_sky130_fd_sc_hd__and2_0_A_X ;
   wire [4:0] \R_CROSSED_0.d_out_reg1 ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C ;
-  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_Y ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C ;
+  wire \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_Y ;
   wire \R_CROSSED_0.rst ;
   wire \W_CROSSED_0.clk ;
   wire [4:0] \W_CROSSED_0.d_in ;
@@ -61,19 +61,17 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
   wire [4:0] \W_CROSSED_0.d_out_reg0 ;
   wire \W_CROSSED_0.d_out_reg0_sky130_fd_sc_hd__and2_0_A_X ;
   wire [4:0] \W_CROSSED_0.d_out_reg1 ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__and2_0_B_X ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__and2_0_B_X ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__xnor2_1_Y_B ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ;
-  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_Y ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__and2_0_B_X ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B_sky130_fd_sc_hd__and2_0_B_X ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__and2_0_B_X ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__xnor2_1_Y_B ;
+  wire \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_Y ;
   wire \W_CROSSED_0.rst ;
   wire [31:0] rdata_mem;
   wire \read_handler.clk ;
@@ -88,14 +86,14 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
   wire ren_sky130_fd_sc_hd__and4b_1_B_X;
   wire ren_sky130_fd_sc_hd__lpflow_isobufsrc_1_A_X;
   wire ren_sky130_fd_sc_hd__nand3b_1_B_Y;
+  wire ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_A_N;
+  wire ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_X;
   wire ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__xor2_1_B_X;
   wire ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__xor2_1_B_X_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X;
   wire rptr_0;
   wire rptr_0_sky130_fd_sc_hd__and2_0_B_X;
   wire rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D;
-  wire rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_A;
-  wire rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B;
-  wire rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B_sky130_fd_sc_hd__nand2_1_Y_B;
+  wire rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__and2_0_X_B;
   wire [4:0] rptr_1;
   wire [4:0] rptr_bin;
   wire wen_sky130_fd_sc_hd__and4b_1_B_X;
@@ -155,101 +153,101 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
     .D(\R_CROSSED_0.d_out_reg0_sky130_fd_sc_hd__and2_0_A_X ),
     .Q(\R_CROSSED_0.d_out_reg1 [0])
   );
-  sky130_fd_sc_hd__xor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A  (
+  sky130_fd_sc_hd__xnor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A  (
     .A(\R_CROSSED_0.d_out_reg1 [0]),
-    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B ),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X )
+    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B ),
+    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y )
   );
-  sky130_fd_sc_hd__and2_0 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B  (
+  sky130_fd_sc_hd__lpflow_isobufsrc_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP  (
     .A(wrst),
-    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B ),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X )
+    .SLEEP(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B ),
+    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X )
   );
-  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(wclk),
-    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X ),
+    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ),
     .Q(\write_handler.out_addr_reg [0])
   );
-  sky130_fd_sc_hd__xor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__xor2_1_X  (
+  sky130_fd_sc_hd__xnor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B_sky130_fd_sc_hd__xnor2_1_Y  (
     .A(\write_handler.out_addr_reg [0]),
     .B(wen_sky130_fd_sc_hd__lpflow_isobufsrc_1_A_X),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B )
+    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_B )
   );
-  sky130_fd_sc_hd__nor4b_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B  (
-    .A(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A ),
-    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X ),
-    .C(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C ),
-    .D_N(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N ),
-    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_Y )
+  sky130_fd_sc_hd__nor4b_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B  (
+    .A(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A ),
+    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y ),
+    .C(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C ),
+    .D_N(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N ),
+    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_Y )
   );
-  sky130_fd_sc_hd__lpflow_isobufsrc_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP  (
+  sky130_fd_sc_hd__lpflow_isobufsrc_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP  (
     .A(wrst),
-    .SLEEP(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A ),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X )
+    .SLEEP(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A ),
+    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X )
   );
-  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(wclk),
-    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ),
+    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ),
     .Q(\write_handler.out_addr_reg [3])
   );
-  sky130_fd_sc_hd__xor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X  (
+  sky130_fd_sc_hd__xor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X  (
     .A(\write_handler.out_addr_reg [3]),
-    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B ),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A )
+    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B ),
+    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A )
   );
-  sky130_fd_sc_hd__nand2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B_sky130_fd_sc_hd__nand2_1_Y  (
+  sky130_fd_sc_hd__nand2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B_sky130_fd_sc_hd__nand2_1_Y  (
     .A(\write_handler.out_addr_reg [2]),
     .B(wen_sky130_fd_sc_hd__and4b_1_B_X),
-    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B )
+    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_A_sky130_fd_sc_hd__xor2_1_X_B )
   );
-  sky130_fd_sc_hd__nand2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y  (
-    .A(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A ),
+  sky130_fd_sc_hd__nand2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y  (
+    .A(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A ),
     .B(wen_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__xor2_1_B_X),
-    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C )
+    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C )
   );
-  sky130_fd_sc_hd__lpflow_isobufsrc_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP  (
+  sky130_fd_sc_hd__lpflow_isobufsrc_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP  (
     .A(wrst),
-    .SLEEP(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A ),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X )
+    .SLEEP(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A ),
+    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X )
   );
-  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(wclk),
-    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ),
+    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ),
     .Q(\write_handler.out_addr_reg [2])
   );
-  sky130_fd_sc_hd__xnor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__xnor2_1_Y  (
+  sky130_fd_sc_hd__xnor2_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A_sky130_fd_sc_hd__xnor2_1_Y  (
     .A(\write_handler.out_addr_reg [2]),
     .B(wen_sky130_fd_sc_hd__and4b_1_B_X),
-    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A )
+    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_C_sky130_fd_sc_hd__nand2_1_Y_A )
   );
-  sky130_fd_sc_hd__and3_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X  (
+  sky130_fd_sc_hd__and3_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X  (
     .A(wrst),
-    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B ),
-    .C(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C ),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N )
+    .B(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B ),
+    .C(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C ),
+    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N )
   );
-  sky130_fd_sc_hd__a31o_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B_sky130_fd_sc_hd__a31o_1_X  (
+  sky130_fd_sc_hd__nand4_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B_sky130_fd_sc_hd__nand4_1_Y  (
+    .A(\write_handler.out_addr_reg [2]),
+    .B(\write_handler.out_addr_reg [3]),
+    .C(\write_handler.out_addr_reg [4]),
+    .D(wen_sky130_fd_sc_hd__and4b_1_B_X),
+    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B )
+  );
+  sky130_fd_sc_hd__a31o_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C_sky130_fd_sc_hd__a31o_1_X  (
     .A1(\write_handler.out_addr_reg [2]),
     .A2(\write_handler.out_addr_reg [3]),
     .A3(wen_sky130_fd_sc_hd__and4b_1_B_X),
     .B1(\write_handler.out_addr_reg [4]),
-    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_B )
+    .X(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C )
   );
-  sky130_fd_sc_hd__nand4_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C_sky130_fd_sc_hd__nand4_1_Y  (
-    .A(\write_handler.out_addr_reg [2]),
-    .B(\write_handler.out_addr_reg [4]),
-    .C(\write_handler.out_addr_reg [3]),
-    .D(wen_sky130_fd_sc_hd__and4b_1_B_X),
-    .Y(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__and3_1_X_C )
-  );
-  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(wclk),
-    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_D_N ),
+    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_D_N ),
     .Q(\write_handler.out_addr_reg [4])
   );
-  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_Y_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__dfxtp_1 \R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_Y_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(wclk),
-    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4b_1_B_Y ),
+    .D(\R_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor2_1_A_Y_sky130_fd_sc_hd__nor4b_1_B_Y ),
     .Q(\write_handler.fifo_status_reg )
   );
   sky130_fd_sc_hd__and2_0 \W_CROSSED_0.d_out_reg0_sky130_fd_sc_hd__and2_0_A  (
@@ -267,99 +265,85 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
     .D(\W_CROSSED_0.d_out_reg0_sky130_fd_sc_hd__and2_0_A_X ),
     .Q(\W_CROSSED_0.d_out_reg1 [0])
   );
-  sky130_fd_sc_hd__xor2_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A  (
-    .A(\W_CROSSED_0.d_out_reg1 [0]),
-    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B ),
-    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X )
-  );
-  sky130_fd_sc_hd__and2_0 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B  (
-    .A(rrst),
-    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B ),
-    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X )
-  );
-  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X_sky130_fd_sc_hd__dfxtp_1_D  (
-    .CLK(rclk),
-    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__and2_0_B_X ),
-    .Q(\read_handler.out_addr_reg [0])
-  );
-  sky130_fd_sc_hd__xor2_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B_sky130_fd_sc_hd__xor2_1_X  (
+  sky130_fd_sc_hd__xnor3_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B  (
     .A(\read_handler.out_addr_reg [0]),
-    .B(ren_sky130_fd_sc_hd__lpflow_isobufsrc_1_A_X),
-    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_B )
+    .B(\W_CROSSED_0.d_out_reg1 [0]),
+    .C(ren_sky130_fd_sc_hd__lpflow_isobufsrc_1_A_X),
+    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X )
   );
-  sky130_fd_sc_hd__nor4_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C  (
-    .A(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A ),
-    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B ),
-    .C(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X ),
-    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D ),
-    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_Y )
-  );
-  sky130_fd_sc_hd__and2_0 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__and2_0_B  (
+  sky130_fd_sc_hd__nand3_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C  (
     .A(rrst),
-    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A ),
-    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__and2_0_B_X )
+    .B(ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__xor2_1_B_X),
+    .C(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X ),
+    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y )
   );
-  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__and2_0_B_X_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__nor4_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D  (
+    .A(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A ),
+    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B ),
+    .C(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C ),
+    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y ),
+    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_Y )
+  );
+  sky130_fd_sc_hd__and2_0 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__and2_0_B  (
+    .A(rrst),
+    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A ),
+    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__and2_0_B_X )
+  );
+  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__and2_0_B_X_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(rclk),
-    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__and2_0_B_X ),
+    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__and2_0_B_X ),
     .Q(\read_handler.out_addr_reg [3])
   );
-  sky130_fd_sc_hd__lpflow_isobufsrc_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X  (
-    .A(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__xnor2_1_Y_B ),
-    .SLEEP(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP ),
-    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A )
+  sky130_fd_sc_hd__lpflow_isobufsrc_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X  (
+    .A(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__xnor2_1_Y_B ),
+    .SLEEP(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP ),
+    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A )
   );
-  sky130_fd_sc_hd__a21oi_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP_sky130_fd_sc_hd__a21oi_1_Y  (
+  sky130_fd_sc_hd__a21oi_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP_sky130_fd_sc_hd__a21oi_1_Y  (
     .A1(\read_handler.out_addr_reg [2]),
     .A2(ren_sky130_fd_sc_hd__and4b_1_B_X),
     .B1(\read_handler.out_addr_reg [3]),
-    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP )
+    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_A_sky130_fd_sc_hd__lpflow_isobufsrc_1_X_SLEEP )
   );
-  sky130_fd_sc_hd__and2_0 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__and2_0_B  (
+  sky130_fd_sc_hd__and2_0 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B_sky130_fd_sc_hd__and2_0_B  (
     .A(rrst),
-    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B ),
-    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__and2_0_B_X )
+    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B ),
+    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B_sky130_fd_sc_hd__and2_0_B_X )
   );
-  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__and2_0_B_X_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B_sky130_fd_sc_hd__and2_0_B_X_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(rclk),
-    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__and2_0_B_X ),
-    .Q(\read_handler.out_addr_reg [4])
-  );
-  sky130_fd_sc_hd__xnor2_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__xnor2_1_Y  (
-    .A(\read_handler.out_addr_reg [4]),
-    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__xnor2_1_Y_B ),
-    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B )
-  );
-  sky130_fd_sc_hd__nand3_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__xnor2_1_Y_B_sky130_fd_sc_hd__nand3_1_Y  (
-    .A(\read_handler.out_addr_reg [2]),
-    .B(\read_handler.out_addr_reg [3]),
-    .C(ren_sky130_fd_sc_hd__and4b_1_B_X),
-    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_B_sky130_fd_sc_hd__xnor2_1_Y_B )
-  );
-  sky130_fd_sc_hd__nand3_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y  (
-    .A(rrst),
-    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B ),
-    .C(ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__xor2_1_B_X),
-    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D )
-  );
-  sky130_fd_sc_hd__lpflow_isobufsrc_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP  (
-    .A(rrst),
-    .SLEEP(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B ),
-    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X )
-  );
-  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X_sky130_fd_sc_hd__dfxtp_1_D  (
-    .CLK(rclk),
-    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B_sky130_fd_sc_hd__lpflow_isobufsrc_1_SLEEP_X ),
+    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B_sky130_fd_sc_hd__and2_0_B_X ),
     .Q(\read_handler.out_addr_reg [2])
   );
-  sky130_fd_sc_hd__xnor2_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B_sky130_fd_sc_hd__xnor2_1_Y  (
+  sky130_fd_sc_hd__xor2_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B_sky130_fd_sc_hd__xor2_1_X  (
     .A(\read_handler.out_addr_reg [2]),
     .B(ren_sky130_fd_sc_hd__and4b_1_B_X),
-    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_D_sky130_fd_sc_hd__nand3_1_Y_B )
+    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_B )
   );
-  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_Y_sky130_fd_sc_hd__dfxtp_1_D  (
+  sky130_fd_sc_hd__and2_0 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__and2_0_B  (
+    .A(rrst),
+    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C ),
+    .X(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__and2_0_B_X )
+  );
+  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__and2_0_B_X_sky130_fd_sc_hd__dfxtp_1_D  (
     .CLK(rclk),
-    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xor2_1_A_X_sky130_fd_sc_hd__nor4_1_C_Y ),
+    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__and2_0_B_X ),
+    .Q(\read_handler.out_addr_reg [4])
+  );
+  sky130_fd_sc_hd__xnor2_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__xnor2_1_Y  (
+    .A(\read_handler.out_addr_reg [4]),
+    .B(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__xnor2_1_Y_B ),
+    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C )
+  );
+  sky130_fd_sc_hd__nand3_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__xnor2_1_Y_B_sky130_fd_sc_hd__nand3_1_Y  (
+    .A(\read_handler.out_addr_reg [3]),
+    .B(\read_handler.out_addr_reg [2]),
+    .C(ren_sky130_fd_sc_hd__and4b_1_B_X),
+    .Y(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_C_sky130_fd_sc_hd__xnor2_1_Y_B )
+  );
+  sky130_fd_sc_hd__dfxtp_1 \W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_Y_sky130_fd_sc_hd__dfxtp_1_D  (
+    .CLK(rclk),
+    .D(\W_CROSSED_0.d_out_reg1_sky130_fd_sc_hd__xnor3_1_B_X_sky130_fd_sc_hd__nand3_1_C_Y_sky130_fd_sc_hd__nor4_1_D_Y ),
     .Q(\read_handler.fifo_status_reg )
   );
   sky130_fd_sc_hd__and4b_1 ren_sky130_fd_sc_hd__and4b_1_B (
@@ -379,6 +363,22 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
     .B(ren),
     .C(\read_handler.out_addr_reg [0]),
     .Y(ren_sky130_fd_sc_hd__nand3b_1_B_Y)
+  );
+  sky130_fd_sc_hd__and3b_1 ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C (
+    .A_N(ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_A_N),
+    .B(rrst),
+    .C(ren_sky130_fd_sc_hd__nand3b_1_B_Y),
+    .X(ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_X)
+  );
+  sky130_fd_sc_hd__nor2_1 ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_A_N_sky130_fd_sc_hd__nor2_1_Y (
+    .A(\read_handler.out_addr_reg [0]),
+    .B(ren_sky130_fd_sc_hd__lpflow_isobufsrc_1_A_X),
+    .Y(ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_A_N)
+  );
+  sky130_fd_sc_hd__dfxtp_1 ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_X_sky130_fd_sc_hd__dfxtp_1_D (
+    .CLK(rclk),
+    .D(ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_X),
+    .Q(\read_handler.out_addr_reg [0])
   );
   sky130_fd_sc_hd__xor2_1 ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__xor2_1_B (
     .A(\read_handler.out_addr_reg [1]),
@@ -405,27 +405,15 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
     .D(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D),
     .Q(rptr_0)
   );
-  sky130_fd_sc_hd__nor2_1 rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y (
-    .A(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_A),
-    .B(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B),
-    .Y(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D)
-  );
-  sky130_fd_sc_hd__nor3_1 rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_A_sky130_fd_sc_hd__nor3_1_Y (
-    .A(\read_handler.out_addr_reg [1]),
-    .B(\read_handler.out_addr_reg [0]),
-    .C(ren_sky130_fd_sc_hd__lpflow_isobufsrc_1_A_X),
-    .Y(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_A)
-  );
-  sky130_fd_sc_hd__nand2_1 rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B_sky130_fd_sc_hd__nand2_1_Y (
+  sky130_fd_sc_hd__and2_0 rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__and2_0_X (
     .A(rrst),
-    .B(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B_sky130_fd_sc_hd__nand2_1_Y_B),
-    .Y(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B)
+    .B(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__and2_0_X_B),
+    .X(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D)
   );
-  sky130_fd_sc_hd__o21ai_0 rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B_sky130_fd_sc_hd__nand2_1_Y_B_sky130_fd_sc_hd__o21ai_0_Y (
-    .A1(\read_handler.out_addr_reg [0]),
-    .A2(ren_sky130_fd_sc_hd__lpflow_isobufsrc_1_A_X),
-    .B1(\read_handler.out_addr_reg [1]),
-    .Y(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__nor2_1_Y_B_sky130_fd_sc_hd__nand2_1_Y_B)
+  sky130_fd_sc_hd__xnor2_1 rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__and2_0_X_B_sky130_fd_sc_hd__xnor2_1_Y (
+    .A(\read_handler.out_addr_reg [1]),
+    .B(ren_sky130_fd_sc_hd__nand3b_1_B_Y_sky130_fd_sc_hd__and3b_1_C_A_N),
+    .Y(rptr_0_sky130_fd_sc_hd__dfxtp_1_Q_D_sky130_fd_sc_hd__and2_0_X_B)
   );
   sky130_fd_sc_hd__and4b_1 wen_sky130_fd_sc_hd__and4b_1_B (
     .A_N(\write_handler.fifo_status_reg ),
@@ -526,8 +514,8 @@ module async_fifo(wdata, wen, wclk, wrst, rrst, rclk, ren, rdata, fifo_full, fif
   assign \read_handler.wr  = 1'h1;
   assign \read_handler.out_addr  = \read_handler.out_addr_reg ;
   assign \read_handler.fifo_status  = \read_handler.fifo_status_reg ;
-  assign \B2G$func$design_sky130/async_fifo.sv:82$84.in0  = 5'hxx;
-  assign \B2G$func$design_sky130/async_fifo.sv:74$83.in0  = 5'hxx;
+  assign \B2G$func$design_sky130/async_fifo.sv:82$70.in0  = 5'hxx;
+  assign \B2G$func$design_sky130/async_fifo.sv:74$69.in0  = 5'hxx;
   assign rptr_bin = \read_handler.out_addr_reg ;
   assign wptr_bin = \write_handler.out_addr_reg ;
   assign wptr_1 = { 4'h0, \W_CROSSED_0.d_out_reg1 [0] };
